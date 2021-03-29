@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+$color-magenta: #F1136C;
+$color-white: white;
+$color-black: #06050D;
+$color-black-light:#302f3a;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $color-magenta;
+  background: linear-gradient(270deg, $color-magenta 0%, $color-white 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'lato';
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dnone {
+  display: none;
+}
+
+.content {
+  background-color: $color-black;
+  width: 50rem;
+  height: auto;
+  border-radius: 1.5rem;
+
+  .content-timer {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+
+    .content-h,
+    .content-m,
+    .content-s {
+      width: 16rem;
+      height: 10rem;
+      /* background-color: rgb(51, 12, 87); */
+
+      .time {
+        font-size: 130px;
+        text-align: center;
+        font-weight: 300;
+        color: $color-white;
+
+        span {
+          font-size: 3.5rem;
+          font-weight: 500;
+          color: $color-magenta;
+        }
+      }
+
+    }
+
+    .content-btn {
+      /* background-color: blueviolet; */
+      text-align: center;
+
+      button {
+        font-size: 2.8rem;
+        width: 3rem;
+        margin: 0 10px;
+        border-radius: 10px;
+        border: none;
+        outline: inherit;
+        color: $color-magenta;
+        background: $color-black;
+
+      }
+
+      :hover {
+        background: $color-black-light;
+        transition: 0.5s;
+        transform: scale(0.8);
+        cursor: pointer;
+      }
+
+
+    }
+  }
+
+  .content-btn-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+
+    button {
+      font-size: 5rem;
+      width: 6.5rem;
+      margin: 0 30px;
+      border-radius: 20px;
+      border: none;
+      outline: inherit;
+      color: $color-magenta;
+      background: $color-black;
+
+      &:hover {
+        background-color: $color-black-light;
+        transition: 0.6s;
+        transform: scale(0.8);
+        cursor: pointer;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+      }
+
+    }
+  }
+
+}
+
+//----animation
+.move {
+  animation: move_timer 1.3s infinite;
+}
+
+@keyframes move_timer {
+
+  20%,
+  50%,
+  80% {
+    transform: translateY(0px);
+  }
+
+  30% {
+    transform: translateY(-45px);
+  }
+
+  60% {
+    transform: translateY(-25px);
+  }
+}
